@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<title>NOCTYRA | Where silence meets infinity.</title>
+<meta name="description" content="An endless universe of identities beneath an eternal night.">
+<link rel="preload" as="image" href="./3db23560f4989b80a653c5aab34e714a.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Ccircle cx='15' cy='17' r='10' fill='%23e8ebef'/%3E%3Ccircle cx='20.5' cy='13.5' r='9' fill='%23000'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Shared crescent definition (referenced by the wordmark and the header mark) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="cres" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+      <rect width="32" height="32" fill="#fff"/>
+      <circle cx="21.5" cy="12.5" r="11" fill="#000"/>
+    </mask>
+  </defs>
+</svg>
+
+<div class="sky" aria-hidden="true">
+  <div class="sky-fill"></div>
+  <div class="sky-art"></div>
+  <div class="veil"></div>
+</div>
+
+<a class="skip" href="#directory">Skip to profiles</a>
+
+<header class="bar" id="bar">
+  <a class="mark" href="./" id="home" aria-label="NOCTYRA, return to the beginning">
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="15" cy="17" r="12" fill="currentColor" mask="url(#cres)"/></svg>
+    <span class="mark-text">NOCTYRA</span>
+  </a>
+  <form class="search" id="searchForm" role="search" autocomplete="off">
+    <label class="sr" for="q">Search profiles by number, handle, link or name</label>
+    <input id="q" type="text" inputmode="search" enterkeyhint="search" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Number, @handle, link or name">
+    <button type="button" class="clear" id="clear" aria-label="Clear search" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <button type="submit" class="submit" aria-label="Search">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15 15l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </form>
+  <div class="results" id="results" hidden></div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <h1 class="wordmark" aria-label="NOCTYRA">N<svg class="o" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="15" cy="17" r="12" fill="currentColor" mask="url(#cres)"/></svg>CTYRA</h1>
+    <p class="tag">WHERE SILENCE MEETS INFINITY.</p>
+    <p class="desc">An endless universe of identities beneath an eternal night.</p>
+    <p class="sub">Every identity has a place beneath the endless night.</p>
+    <form class="jump" id="jumpForm" autocomplete="off">
+      <label for="jump">Profile number</label>
+      <input id="jump" type="text" inputmode="numeric" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="999999999999999999999999999999">
+      <button type="submit">Open profile</button>
+    </form>
+    <p class="msg" id="jumpMsg" role="alert"></p>
+  </section>
+
+  <section class="directory" id="directory" aria-label="Profile directory">
+    <div class="rooted" id="rooted" hidden>
+      <span id="rootedText"></span>
+      <button type="button" id="toStart">Return to the beginning</button>
+    </div>
+    <div id="topSentinel" class="sentinel" aria-hidden="true"></div>
+    <div id="list" class="list"></div>
+    <div id="sentinel" class="sentinel" aria-hidden="true"></div>
+    <div id="status" class="status"><p class="quiet">The night continues. Keep descending.</p></div>
+  </section>
+</main>
+
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="vName">
+  <div class="sheet">
+    <div class="vbar">
+      <button type="button" class="btn" id="vClose">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Directory</span>
+      </button>
+      <div class="vnav">
+        <button type="button" class="btn sq" id="vPrev" aria-label="Previous profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" class="btn sq" id="vNext" aria-label="Next profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="vBody">
+      <div class="vhead">
+        <div class="vavatar" id="vAvatar"></div>
+        <div class="vtitle">
+          <h2 id="vName" tabindex="-1"></h2>
+          <p class="vhandle" id="vHandle"></p>
+          <p class="vtag" id="vTag"></p>
+        </div>
+      </div>
+
+      <div class="idblock">
+        <span class="lbl">Profile number</span>
+        <code id="vId"></code>
+      </div>
+
+      <p class="bio" id="vBio"></p>
+
+      <dl class="facts">
+        <div><dt>Archetype</dt><dd id="vArch"></dd></div>
+        <div><dt>Origin</dt><dd id="vOrigin"></dd></div>
+        <div><dt>Constellation</dt><dd id="vCon"></dd></div>
+        <div><dt>Element</dt><dd id="vElem"></dd></div>
+        <div><dt>Status</dt><dd id="vStat"></dd></div>
+      </dl>
+
+      <div class="traits" id="vTraits"></div>
+      <p class="desc2" id="vDesc"></p>
+
+      <div class="emblem"><div id="vEmblem"></div><span>Emblem</span></div>
+
+      <div class="actions">
+        <button type="button" class="btn primary" id="vCopy">Copy profile link</button>
+        <button type="button" class="btn" id="vCopyId">Copy number</button>
+        <button type="button" class="btn" id="vExplore">Explore from here</button>
+      </div>
+    </div>
+
+    <div id="vError" class="verror" hidden role="alert">
+      <p id="vErrMsg"></p>
+      <button type="button" class="btn primary" id="vErrBack">Return to the directory</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<noscript><p class="noscript">NOCTYRA generates its identities in your browser. Please enable JavaScript.</p></noscript>
+<script src="script.js" defer></script>
+</body>
+</html>
